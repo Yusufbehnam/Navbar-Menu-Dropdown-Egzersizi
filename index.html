@@ -174,6 +174,19 @@
           dropDown.classList.toggle("open"); // open classi ekle
         });
       });
+
+      // Başka bir yere tıklanınca menü kapansın
+      document.body.addEventListener("click", (event) => {
+        // console.log(event.target)
+        dropDownMenus.forEach(menuItem =>{
+          const dropDown = menuItem.querySelector("ul.dropdown-menu")
+          if (event.target != menuItem && event.target !=dropDown) {
+            // console.log("nerdeyiz")
+            dropDown.classList.remove("open")
+          }
+
+        }  )
+      } )
     </script>
   </body>
 </html>
